@@ -3,7 +3,22 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2026
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maha", "Maha\Maha.csproj", "{B3281AB6-C05B-4221-BBE1-37360332BFA9}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Maha.Core", "Maha.Core", "{84E6EA1D-C957-4DC1-9964-75CFEB16B79D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maha.JsonClient", "Maha.JsonClient\Maha.JsonClient.csproj", "{27CC85B5-DC24-4E0A-BB42-076414E70032}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maha.JsonService", "Maha.JsonService\Maha.JsonService.csproj", "{C41E620A-024E-4795-8823-7A8A3BFD1E33}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Maha.Remark", "Maha.Remark", "{EC40455F-7A07-4C00-BE1E-94E0BC1F3A88}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\Project\CDZS\5产品源码\客户端\PCWP\SRBG.PCWP\README.md = ..\..\..\Project\CDZS\5产品源码\客户端\PCWP\SRBG.PCWP\README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Maha.Host", "Maha.Host", "{94C6F18B-7ADB-4385-8E41-6A89EE497E63}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maha.Microservices.Host", "Maha.Microservices.Host\Maha.Microservices.Host.csproj", "{EA00E6E6-438B-434B-A9D7-185A559F6035}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maha.Spotted", "Maha.Spotted\Maha.Spotted.csproj", "{625E5505-1E23-4511-9899-5935508AE570}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,13 +26,31 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B3281AB6-C05B-4221-BBE1-37360332BFA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B3281AB6-C05B-4221-BBE1-37360332BFA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B3281AB6-C05B-4221-BBE1-37360332BFA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B3281AB6-C05B-4221-BBE1-37360332BFA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27CC85B5-DC24-4E0A-BB42-076414E70032}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27CC85B5-DC24-4E0A-BB42-076414E70032}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27CC85B5-DC24-4E0A-BB42-076414E70032}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27CC85B5-DC24-4E0A-BB42-076414E70032}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C41E620A-024E-4795-8823-7A8A3BFD1E33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C41E620A-024E-4795-8823-7A8A3BFD1E33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C41E620A-024E-4795-8823-7A8A3BFD1E33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C41E620A-024E-4795-8823-7A8A3BFD1E33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA00E6E6-438B-434B-A9D7-185A559F6035}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA00E6E6-438B-434B-A9D7-185A559F6035}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA00E6E6-438B-434B-A9D7-185A559F6035}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA00E6E6-438B-434B-A9D7-185A559F6035}.Release|Any CPU.Build.0 = Release|Any CPU
+		{625E5505-1E23-4511-9899-5935508AE570}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{625E5505-1E23-4511-9899-5935508AE570}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{625E5505-1E23-4511-9899-5935508AE570}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{625E5505-1E23-4511-9899-5935508AE570}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{27CC85B5-DC24-4E0A-BB42-076414E70032} = {84E6EA1D-C957-4DC1-9964-75CFEB16B79D}
+		{C41E620A-024E-4795-8823-7A8A3BFD1E33} = {84E6EA1D-C957-4DC1-9964-75CFEB16B79D}
+		{EA00E6E6-438B-434B-A9D7-185A559F6035} = {94C6F18B-7ADB-4385-8E41-6A89EE497E63}
+		{625E5505-1E23-4511-9899-5935508AE570} = {84E6EA1D-C957-4DC1-9964-75CFEB16B79D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6728F65A-5378-4DF2-8FAC-8591F0D3AFA1}
