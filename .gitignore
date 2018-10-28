@@ -17,15 +17,18 @@
 *.userprefs
 
 # Build results
+*.sqlite
+.vs/
+publish/
 [Dd]ebug/
 [Dd]ebugPublic/
 [Rr]elease/
 [Rr]eleases/
-*.sqlite
-/.vs:
 x64/
 x86/
 bld/
 [Bb]in/
 [Oo]bj/
 [Ll]og/
+[Ll]ogs/
+
