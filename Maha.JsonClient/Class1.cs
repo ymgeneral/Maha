@@ -7,6 +7,7 @@ namespace Maha.JsonClient
 		public void test()
 		{
 			int a = 0;
+
 		}
     }
 }
