@@ -4734,7 +4734,7 @@
       ]
     },
     "Microsoft.AspNetCore.Razor.Design/2.1.1": {
-      "sha512": "f8PKGcxiezL1RVqmnmrazj24Mj4KCTSXqwdotl7Lc+82h8iLV7ItxEIShTJakG7M9iw0ZuCocM0J/IhYesdQrg==",
+      "sha512": "BOK5fckW9v7xWjpEI6bPGwkjw10OPVASZcAa8HoWJo/0Mmg4Azddj92v8noU+YgvD/6zNZ9o/RiRXXKxk5rYwQ==",
       "type": "package",
       "path": "microsoft.aspnetcore.razor.design/2.1.1",
       "files": [
@@ -4923,7 +4923,7 @@
       ]
     },
     "Microsoft.CodeAnalysis.Analyzers/1.1.0": {
-      "sha512": "HS3iRWZKcUw/8eZ/08GXKY2Bn7xNzQPzf8gRPHGSowX7u7XXu9i9YEaBeBNKUXWfI7qjvT2zXtLUvbN0hds8vg==",
+      "sha512": "CP+rSf37dicFBd1it6bkxl4j1NCAdEhOnJAJE8BHSIapEIbS5F48gvN4bENV0JkrfLQy83kRvSOlxOVlahFQPQ==",
       "type": "package",
       "path": "microsoft.codeanalysis.analyzers/1.1.0",
       "files": [
@@ -5987,7 +5987,7 @@
       ]
     },
     "System.Diagnostics.FileVersionInfo/4.3.0": {
-      "sha512": "omCF64wzQ3Q2CeIqkD6lmmxeMZtGHUmzgFMPjfVaOsyqpR66p/JaZzManMw1s33osoAb5gqpncsjie67+yUPHQ==",
+      "sha512": "JaZwar72UUEUuhKZ+20tNniOGqsxATQOle2Yj2bIlPCEdBz3p8fooW7wKNtIWzP8QwQqOuyFrj8u3yZ8l6ye5Q==",
       "type": "package",
       "path": "system.diagnostics.fileversioninfo/4.3.0",
       "files": [
@@ -6027,7 +6027,7 @@
       ]
     },
     "System.Diagnostics.StackTrace/4.3.0": {
-      "sha512": "BiHg0vgtd35/DM9jvtaC1eKRpWZxr0gcQd643ABG7GnvSlf5pOkY2uyd42mMOJoOmKvnpNj0F4tuoS1pacTwYw==",
+      "sha512": "p00Y8AEBllPeGQyaIkRo2NceERScoGp1iayTRsIGcmbaMSsKIVECFC8Xbx/coOEWPZUwdi3ZGys3CerES6B55g==",
       "type": "package",
       "path": "system.diagnostics.stacktrace/4.3.0",
       "files": [
@@ -6120,7 +6120,7 @@
       ]
     },
     "System.Dynamic.Runtime/4.3.0": {
-      "sha512": "SNVi1E/vfWUAs/WYKhE9+qlS6KqK0YVhnlT0HQtr8pMIA8YX3lwy3uPMownDwdYISBdmAF/2holEIldVp85Wag==",
+      "sha512": "9ElwEn28wB518DuGidzJ1XLqu/3Iszh6NzVK4acgg+5Zh+hHWoaIVLxnbfmRCodgYmFqX/o+WF7YDZ8wIq2wfw==",
       "type": "package",
       "path": "system.dynamic.runtime/4.3.0",
       "files": [
@@ -7576,7 +7576,7 @@
       ]
     },
     "System.Text.Encoding.CodePages/4.3.0": {
-      "sha512": "IRiEFUa5b/Gs5Egg8oqBVoywhtOeaO2KOx3j0RfcYY/raxqBuEK7NXRDgOwtYM8qbi+7S4RPXUbNt+ZxyY0/NQ==",
+      "sha512": "yFjnCz5b/6oaQufZcHJGsobaSAY2KfAVUxaFvncIUAH+bOpRXywp4tqCES/W4BlT73nHvABdTQQL9/KCvTFrcw==",
       "type": "package",
       "path": "system.text.encoding.codepages/4.3.0",
       "files": [
@@ -7870,7 +7870,7 @@
       ]
     },
     "System.Threading.Tasks.Parallel/4.3.0": {
-      "sha512": "cbjBNZHf/vQCfcdhzx7knsiygoCKgxL8mZOeocXZn5gWhCdzHIq6bYNKWX0LAJCWYP7bds4yBK8p06YkP0oa0g==",
+      "sha512": "knw1/IimO/Ybc23WXz54D0iYRDpgTi5pbxcAEAp9aeIMdJXB+2lcac8kitraM97Wuoyl+SHStIKrC6CEo6pzqg==",
       "type": "package",
       "path": "system.threading.tasks.parallel/4.3.0",
       "files": [
@@ -7925,7 +7925,7 @@
       ]
     },
     "System.Threading.Thread/4.3.0": {
-      "sha512": "OHmbT+Zz065NKII/ZHcH9XO1dEuLGI1L2k7uYss+9C1jLxTC9kTZZuzUOyXHayRk+dft9CiDf3I/QZ0t8JKyBQ==",
+      "sha512": "LCroj+Txbr/yA8MDv0vpPwjvZSYSPYTahA0OPo2N9ohURXp9BjkRiDv8gIHNwiG0p8dl+QiIC02XIzYDFdeNdg==",
       "type": "package",
       "path": "system.threading.thread/4.3.0",
       "files": [
@@ -7963,7 +7963,7 @@
       ]
     },
     "System.ValueTuple/4.3.0": {
-      "sha512": "cNLEvBX3d6MMQRZe3SMFNukVbitDAEpVZO17qa0/2FHxZ7Y7PpFRpr6m2615XYM/tYYYf0B+WyHNujqIw8Luwg==",
+      "sha512": "io57FHj/3lGyeoyCqoRovpsw52xBrmMSSpDLmPt1EfSodRIR6nEArpCbJMT+EYWG1JnU2iJ9o9WfOkbHzzt1UQ==",
       "type": "package",
       "path": "system.valuetuple/4.3.0",
       "files": [
@@ -8116,7 +8116,7 @@
       ]
     },
     "System.Xml.XmlDocument/4.3.0": {
-      "sha512": "lJ8AxvkX7GQxpC6GFCeBj8ThYVyQczx2+f/cWHJU8tjS7YfI6Cv6bon70jVEgs2CiFbmmM8b9j1oZVx0dSI2Ww==",
+      "sha512": "kdJ5iAPQouTcODqUHXoSK825+3nYR2mpe4KZEfkZStOYvBUW/Lq7YbottLYNtSrdBZ0dAuF1yA8/qYMNRJAmpQ==",
       "type": "package",
       "path": "system.xml.xmldocument/4.3.0",
       "files": [
@@ -8153,7 +8153,7 @@
       ]
     },
     "System.Xml.XPath/4.3.0": {
-      "sha512": "v1JQ5SETnQusqmS3RwStF7vwQ3L02imIzl++sewmt23VGygix04pEH+FCj1yWb+z4GDzKiljr1W7Wfvrx0YwgA==",
+      "sha512": "F4EXqmvgmmBxaoqsRjOaD1lqLcpEr9t3sZI022P8hBBNfrStTrG63+UvM4Bq8A1qD6vKgx+sHnJE/3nN6b+lSQ==",
       "type": "package",
       "path": "system.xml.xpath/4.3.0",
       "files": [
@@ -8190,7 +8190,7 @@
       ]
     },
     "System.Xml.XPath.XDocument/4.3.0": {
-      "sha512": "jw9oHHEIVW53mHY9PgrQa98Xo2IZ0ZjrpdOTmtvk+Rvg4tq7dydmxdNqUvJ5YwjDqhn75mBXWttWjiKhWP53LQ==",
+      "sha512": "LS+mEae2fbyh4z584LdRmv3LWzALO4wVpnC/AJpit2IEqp+kSg4FqjcTfMhiq2ehKjkRqiZqQOR20bQ8NOP4YQ==",
       "type": "package",
       "path": "system.xml.xpath.xdocument/4.3.0",
       "files": [
@@ -8237,23 +8237,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ympc\\.nuget\\packages\\": {},
+    "C:\\Users\\Jason\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\SVN合集\\Maha\\Maha.Microservices.Host\\Maha.Microservices.Host.csproj",
+      "projectUniqueName": "E:\\Individual\\Project\\Maha\\Maha.Microservices.Host\\Maha.Microservices.Host.csproj",
       "projectName": "Maha.Microservices.Host",
-      "projectPath": "E:\\SVN合集\\Maha\\Maha.Microservices.Host\\Maha.Microservices.Host.csproj",
-      "packagesPath": "C:\\Users\\ympc\\.nuget\\packages\\",
-      "outputPath": "E:\\SVN合集\\Maha\\Maha.Microservices.Host\\obj\\",
+      "projectPath": "E:\\Individual\\Project\\Maha\\Maha.Microservices.Host\\Maha.Microservices.Host.csproj",
+      "packagesPath": "C:\\Users\\Jason\\.nuget\\packages\\",
+      "outputPath": "E:\\Individual\\Project\\Maha\\Maha.Microservices.Host\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\ympc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Jason\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
