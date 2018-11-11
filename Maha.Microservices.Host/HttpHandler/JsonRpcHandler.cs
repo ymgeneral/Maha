@@ -5,7 +5,7 @@ using System.IO.Compression;
 using System.Text;
 using System.Web;
 
-namespace Maha.Microservices.Host.HttpHandler
+namespace Maha.Microservices.Host 
 {
     /// <summary>
     /// JsonRpc Http管线处理程序
@@ -16,7 +16,7 @@ namespace Maha.Microservices.Host.HttpHandler
         /// <summary>
         /// 使用低位在前的编码方式
         /// </summary>
-        private static Encoding utf8Encoding = new UTF32Encoding(false, false);
+        private static Encoding utf8Encoding = new UTF8Encoding(false);
 
         /// <summary>
         /// 压缩并返回

@@ -8,7 +8,7 @@ using System.Reflection;
 using System.Text;
 using System.Web;
 
-namespace Maha.Microservices.Host.HttpHandler
+namespace Maha.Microservices.Host 
 {
     /// <summary>
     /// JsonRpc帮助 Http管线处理程序
@@ -469,7 +469,7 @@ pre code {
 
                 context.Response.Write("<pre>");
 
-                JsonRequest jsonRequest = new JsonRequest();
+                JsonRpcRequestContext jsonRequest = new JsonRpcRequestContext();
                 jsonRequest.Method = keyValuePair.Key;
                 jsonRequest.Id = 1;
                 jsonRequest.Params = new JObject();
@@ -490,20 +490,17 @@ pre code {
                 context.Response.Write(JsonConvert.SerializeObject(jsonRequest));
                 context.Response.Write(System.Environment.NewLine);
 
-                JsonResponse jsonResponse = new JsonResponse();
-                jsonResponse.Id = 1;
+                JsonRpcResponseContext responseContext = new JsonRpcResponseContext();
+                responseContext.Id = 1;
                 try
                 {
-                    jsonResponse.Result = new SampleBuilder().BuildSampleObject(service.returns.ObjectType);
+                    responseContext.Result = new SampleBuilder().BuildSampleObject(service.returns.ObjectType);
                 }
-                catch
-                {
-
-                }
+                catch {  }
                 context.Response.Write("<-- ");
                 try
                 {
-                    context.Response.Write(JsonConvert.SerializeObject(jsonResponse));
+                    context.Response.Write(JsonConvert.SerializeObject(responseContext));
                 }
                 catch (Exception ex)
                 {

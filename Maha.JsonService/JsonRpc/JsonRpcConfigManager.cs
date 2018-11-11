@@ -8,9 +8,9 @@ namespace Maha.JsonService
     /// <param name="request"></param>
     /// <param name="context"></param>
     /// <returns></returns>
-    public delegate JsonRpcException PreProcessHandler(JsonRequest request, object context);
+    public delegate JsonRpcException PreProcessHandler(JsonRpcRequestContext request, object context);
 
-    public delegate void CompletedProcessHandler(JsonRequest request, JsonResponse response, object context);
+    public delegate void CompletedProcessHandler(JsonRpcRequestContext request, JsonRpcResponseContext response, object context);
 
     /// <summary>
     /// JsonRpc全局配置管理器
@@ -46,7 +46,7 @@ namespace Maha.JsonService
         /// <summary>
         /// 设置默认会话上异常处理程序
         /// </summary>
-        public static void SetErrorHandler(Func<JsonRequest, JsonRpcException, JsonRpcException> handler)
+        public static void SetErrorHandler(Func<JsonRpcRequestContext, JsonRpcException, JsonRpcException> handler)
         {
 
         }
@@ -56,7 +56,7 @@ namespace Maha.JsonService
         /// </summary>
         /// <param name="sessionId"></param>
         /// <param name="handler"></param>
-        public static void SetErrorHandler(string sessionId, Func<JsonRequest, JsonRpcException, JsonRpcException> handler)
+        public static void SetErrorHandler(string sessionId, Func<JsonRpcRequestContext, JsonRpcException, JsonRpcException> handler)
         {
         }
 

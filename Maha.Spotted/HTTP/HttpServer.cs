@@ -39,9 +39,9 @@ namespace Maha.Spotted.HTTP
 				try
 				{
 					HttpListenerContext context = await listener.GetContextAsync();
-				    Task.Factory.StartNew(() => ProcessRequest(context));
+				    await Task.Factory.StartNew(() => ProcessRequest(context));
 				}
-				catch (Exception ex)
+				catch  
 				{
 					break;
 				}

@@ -26,7 +26,7 @@ namespace Maha.JsonService
 
         private CompletedProcessHandler externalCompletedProcessingHandler;
 
-        private Func<JsonRequest, JsonRpcException, JsonRpcException> externalErrorHandler;
+        private Func<JsonRpcRequestContext, JsonRpcException, JsonRpcException> externalErrorHandler;
 
         private Func<string, JsonRpcException, JsonRpcException> parseErrorHandler;
 
@@ -93,12 +93,12 @@ namespace Maha.JsonService
             return null;
         }
 
-        private JsonRpcException PreProcess(JsonRequest request, object context)
+        private JsonRpcException PreProcess(JsonRpcRequestContext request, object context)
         {
             return null;
         }
 
-        internal void CompletedProcess(JsonRequest request, JsonResponse response, object context)
+        internal void CompletedProcess(JsonRpcRequestContext request, JsonRpcResponseContext response, object context)
         {
 
         }

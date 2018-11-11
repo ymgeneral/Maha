@@ -57,7 +57,7 @@ namespace Maha.JsonService
             XmlDocument jsonRpcDoc = new XmlDocument();
             jsonRpcDoc.Load(jsonRpcConfigPath);
 
-            foreach (XmlNode node in jsonRpcDoc["jsonRpc"]["servicesAssembliees"].ChildNodes)
+            foreach (XmlNode node in jsonRpcDoc["jsonrpc"]["serviceAssemblies"].ChildNodes)
             {
                 if (!node.Name.Equals("add", StringComparison.InvariantCultureIgnoreCase))
                     continue;

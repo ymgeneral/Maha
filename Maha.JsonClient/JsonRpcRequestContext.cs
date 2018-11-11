@@ -1,48 +1,50 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
 
-namespace Maha.JsonService
+namespace Maha.JsonClient
 {
     /// <summary>
-    /// Json请求信息
+    /// Rpc客户端请求上下文
     /// </summary>
     [JsonObject(MemberSerialization.OptIn)]
-    public class JsonRequest
+    public class JsonRpcRequestContext
     {
-        public JsonRequest()
-        {
-            Tags = new Dictionary<string, object>();
-        }
-
-        #region Properties
         /// <summary>
-        /// JsonRpc请求版本
+        /// 请求上下文Rpc版本
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "jsonrpc")]
         public string JsonRpc { get { return "2.0"; } }
 
         /// <summary>
-        /// 上下文中的方法名
+        /// 请求上下文方法
         /// </summary>
+        [JsonProperty("method")]
         public string Method { get; set; }
 
         /// <summary>
-        /// 上下文中的参数
+        /// 请求上下文参数
         /// </summary>
         [JsonProperty("params")]
         public object Params { get; set; }
 
         /// <summary>
-        /// 上下文中的Id
+        /// 请求上下文Id
         /// </summary>
         [JsonProperty("id")]
         public object Id { get; set; }
 
         /// <summary>
-        /// 上下文中定义的键、值
+        /// 请求上下文键、值
         /// </summary>
         [JsonProperty("tags")]
         public Dictionary<string, object> Tags { get; set; }
-        #endregion
+
+        /// <summary>
+        /// 请求上下文构造器
+        /// </summary>
+        public JsonRpcRequestContext()
+        {
+            Tags = new Dictionary<string, object>();
+        }
     }
 }

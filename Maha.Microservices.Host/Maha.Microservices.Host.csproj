@@ -115,12 +115,8 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
-    <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\styles.css" />
-    <Content Include="ApplicationInsights.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\clipboard.min.js" />
     <Content Include="Scripts\highlight\highlight.pack.js" />
@@ -150,6 +146,9 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Method.cshtml" />
     <Content Include="Views\Home\Type.cshtml" />
+    <Content Include="jsonrpc.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Maha.JsonClient\Maha.JsonClient.csproj">
@@ -159,6 +158,10 @@
     <ProjectReference Include="..\Maha.JsonService\Maha.JsonService.csproj">
       <Project>{c41e620a-024e-4795-8823-7a8a3bfd1e33}</Project>
       <Name>Maha.JsonService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Maha.Microservices.DemoService\Maha.Microservices.DemoService.csproj">
+      <Project>{1bda08b5-a5fe-4805-8fb3-fd97916b651c}</Project>
+      <Name>Maha.Microservices.DemoService</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 
-namespace Maha.JsonService
+namespace Maha.JsonClient
 {
     /// <summary>
     /// JsonRpc异常

@@ -15,7 +15,12 @@ namespace Maha.Spotted
 			}
 		}
 
-		public void WriteError(object obj)
+        public void Init()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void WriteError(object obj)
 		{
 
 		}

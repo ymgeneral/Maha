@@ -24,7 +24,7 @@ namespace Maha.Microservices.Host
             });
         }
 
-        private JsonRpcException OnJsonRpcException(JsonRequest rpc, JsonRpcException ex)
+        private JsonRpcException OnJsonRpcException(JsonRpcRequestContext rpc, JsonRpcException ex)
         {
             // Serivce Call Service 业务异常透传
             if (ex.data is JsonRpcException && ((JsonRpcException)ex.data).code == 32000)
@@ -58,12 +58,12 @@ namespace Maha.Microservices.Host
             return ex;
         }
 
-        private JsonRpcException PreProcess(JsonRequest rpc, object context)
+        private JsonRpcException PreProcess(JsonRpcRequestContext rpc, object context)
         {
             return null;
         }
 
-        private void CompletedProcess(JsonRequest jsonRequest, JsonResponse jsonResponse, object context)
+        private void CompletedProcess(JsonRpcRequestContext jsonRequest, JsonRpcResponseContext jsonResponse, object context)
         {
             JsonRpcDataContext.RemoveContext();
         }

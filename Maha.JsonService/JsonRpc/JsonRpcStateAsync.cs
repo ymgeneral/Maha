@@ -19,7 +19,6 @@ namespace Maha.JsonService
         public string JsonRpc { get; set; }
         public string Result { get; set; }
 
-
         private object _asyncState = null;
         public object AsyncState
         {
