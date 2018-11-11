@@ -1,5 +1,5 @@
 ﻿@using Maha.JsonService
-@using Maha.JsonService.ExtensionInject
+@*@using Maha.JsonService.ExtensionInject*@
 @using Maha.JsonService.Util
 @{
     Layout = null;
@@ -79,7 +79,7 @@
                     {
                         string methodName = keyValuePair.Key;
                         var smdService = keyValuePair.Value;
-                        var methodXmlComment = AssemlbyCommentReader.GetMethodComment(OF.JsonRpc.Handler.DefaultHandler.Handlers[methodName].Method);
+                        var methodXmlComment = AssemlbyCommentReader.GetMethodComment(Maha.JsonService.Handler.DefaultHandler.Handlers[methodName].Method);
                         string clazz = "";
 
                         if (lastMethodName != null)

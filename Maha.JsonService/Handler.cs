@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 
 namespace Maha.JsonService
 {
+    /// <summary>
+    /// 委托管理器
+    /// </summary>
     public class Handler
     {
         #region Memers
@@ -18,18 +21,39 @@ namespace Maha.JsonService
         /// </summary>
         private static ConcurrentDictionary<string, Handler> _sessionHandlers;
 
+        /// <summary>
+        /// Rpc上下文集合
+        /// </summary>
         private static ConcurrentDictionary<int, object> rpcContexts = new ConcurrentDictionary<int, object>();
 
+        /// <summary>
+        /// Rpc异常集合
+        /// </summary>
         private static ConcurrentDictionary<int, JsonRpcException> rpcExceptions = new ConcurrentDictionary<int, JsonRpcException>();
 
-        private PreProcessHandler externalPreProcessingHandler;
+        /// <summary>
+        /// 外部预处理器委托
+        /// </summary>
+        private PreProcessHandler externalPreProcessingHandler = null;
 
-        private CompletedProcessHandler externalCompletedProcessingHandler;
+        /// <summary>
+        /// 外部完成处理委托
+        /// </summary>
+        private CompletedProcessHandler externalCompletedProcessingHandler = null;
 
-        private Func<JsonRpcRequestContext, JsonRpcException, JsonRpcException> externalErrorHandler;
+        /// <summary>
+        /// 外部错误委托
+        /// </summary>
+        private Func<JsonRpcRequestContext, JsonRpcException, JsonRpcException> externalErrorHandler = null;
 
-        private Func<string, JsonRpcException, JsonRpcException> parseErrorHandler;
+        /// <summary>
+        /// 转换错误委托
+        /// </summary>
+        private Func<string, JsonRpcException, JsonRpcException> parseErrorHandler = null;
 
+        /// <summary>
+        /// 线程回调槽标识名
+        /// </summary>
         private const string THREAD_CALLBACK_SLOT_NAME = "Callback";
         #endregion
 
@@ -44,12 +68,14 @@ namespace Maha.JsonService
         /// </summary>
         public SMD MetaData { get; set; }
 
+        /// <summary>
+        /// 所有委托集
+        /// </summary>
         public Dictionary<string, Delegate> Handlers { get; set; }
 
         /// <summary>
         /// 默认的SessionId
         /// </summary>
-
         public static string DefaultSessionId
         {
             get
@@ -67,22 +93,6 @@ namespace Maha.JsonService
             {
                 return GetSessionHandler(_defaultSessionId);
             }
-        }
-        #endregion
-
-        #region Constructors
-        static Handler()
-        {
-            _defaultSessionId = Guid.NewGuid().ToString();
-            _sessionHandlers = new ConcurrentDictionary<string, Handler>();
-            _sessionHandlers[_defaultSessionId] = new Handler(_defaultSessionId);
-        }
-
-        private Handler(string sessionId)
-        {
-            SessionId = sessionId;
-            this.MetaData = new SMD();
-            this.Handlers = new Dictionary<string, Delegate>();
         }
         #endregion
 
@@ -177,6 +187,22 @@ namespace Maha.JsonService
             }
         }
         #endregion
+        #endregion
+
+        #region Constructors
+        static Handler()
+        {
+            _defaultSessionId = Guid.NewGuid().ToString();
+            _sessionHandlers = new ConcurrentDictionary<string, Handler>();
+            _sessionHandlers[_defaultSessionId] = new Handler(_defaultSessionId);
+        }
+
+        private Handler(string sessionId)
+        {
+            SessionId = sessionId;
+            this.MetaData = new SMD();
+            this.Handlers = new Dictionary<string, Delegate>();
+        }
         #endregion
     }
 }
