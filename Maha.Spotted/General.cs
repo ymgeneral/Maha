@@ -4,8 +4,11 @@ using System.Text;
 
 namespace Maha.Spotted
 {
+	/// <summary>
+	/// 通用工具类
+	/// </summary>
 	public class General
 	{
-		internal ILog LogManage { get; set; }
+		public static ILog LogManage { get; set; }
 	}
 }
