@@ -1,43 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Maha.Microservices.Host.Models;
+﻿using System.Web.Mvc;
 
 namespace Maha.Microservices.Host.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        //[OutputCache(Duration = 60 * 60 * 4/*4 hours*/, VaryByParam = "none")]
+        public ActionResult Index()
         {
             return View();
         }
 
-        public IActionResult About()
-        {
-            ViewData["Message"] = "Your application description page.";
-
-            return View();
-        }
-
-        public IActionResult Contact()
-        {
-            ViewData["Message"] = "Your contact page.";
-
-            return View();
-        }
-
-        public IActionResult Privacy()
+        [OutputCache(Duration = 60 * 60 * 4/*4 hours*/, VaryByParam = "name")]
+        public ActionResult Method()
         {
             return View();
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        [OutputCache(Duration = 60 * 60 * 4/*4 hours*/, VaryByParam = "name")]
+        public ActionResult Type()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View();
         }
     }
 }

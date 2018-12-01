@@ -10,6 +10,7 @@ namespace Maha.Microservices.HostCore.Controllers
 {
 	public class HomeController : Controller
 	{
+
 		public IActionResult Index()
 		{
 			return View();
