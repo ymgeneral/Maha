@@ -16,10 +16,20 @@ namespace Maha.JsonService
         }
 
         #region Properties
+        /// <summary>
+        /// 请求内容
+        /// </summary>
         public string JsonRpc { get; set; }
+
+        /// <summary>
+        /// 返回结果
+        /// </summary>
         public string Result { get; set; }
 
         private object _asyncState = null;
+        /// <summary>
+        /// 异步状态对象
+        /// </summary>
         public object AsyncState
         {
             get
@@ -28,6 +38,9 @@ namespace Maha.JsonService
             }
         }
 
+        /// <summary>
+        /// 线程资源等待对象
+        /// </summary>
         public WaitHandle AsyncWaitHandle
         {
             get
@@ -36,6 +49,9 @@ namespace Maha.JsonService
             }
         }
 
+        /// <summary>
+        /// 同步完成标识位
+        /// </summary>
         public bool CompletedSynchronously
         {
             get
@@ -45,6 +61,9 @@ namespace Maha.JsonService
         }
 
         private bool _isCompleted = false;
+        /// <summary>
+        /// 完成标识位
+        /// </summary>
         public bool IsCompleted
         {
             get

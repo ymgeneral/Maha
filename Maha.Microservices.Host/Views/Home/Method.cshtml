@@ -1,16 +1,5 @@
-﻿@using System.CodeDom
-@using System.CodeDom.Compiler
-@using System.Collections
-@using System.Collections.Specialized
-@using System.Reflection
-@using System.Text
-@using Newtonsoft.Json
-@using Newtonsoft.Json.Linq
-@using Newtonsoft.Json.Serialization
+﻿@using System.Text
 @using Maha.JsonService
-@using Maha.JsonService.AspNet
-@using Maha.JsonService.ExtensionInject
-@using Maha.JsonService.Reflection
 @using Maha.JsonService.Util
 @{
     Layout = null;
@@ -53,7 +42,7 @@
             else
             {
                 var smdService = Handler.DefaultHandler.MetaData.Services[methodName];
-                var methodXmlComment = AssemlbyCommentReader.GetMethodComment(OF.JsonRpc.Handler.DefaultHandler.Handlers[methodName].Method);
+                var methodXmlComment = AssemlbyCommentReader.GetMethodComment(Maha.JsonService.Handler.DefaultHandler.Handlers[methodName].Method);
 
 
                 <h4>
@@ -172,7 +161,7 @@
                     <label id="lbResponseStatus" style="display: inline;color:InfoText"></label>
                 </div>
                 <pre class="small" style="background-color: #fafafa"><code id="txtResponse" spellcheck="false" class="json">@{
-                JsonResponse jsonResponse = new JsonResponse();
+                JsonRpcResponseContext jsonResponse = new JsonRpcResponseContext();
                 jsonResponse.Id = 1;
                 jsonResponse.Result = new SampleBuilder().BuildSampleObject(smdService.returns.ObjectType);
                 @Html.Raw(Html.Encode(new SampleJsonSerializer().Serialize(jsonResponse)))

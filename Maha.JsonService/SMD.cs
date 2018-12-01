@@ -8,16 +8,37 @@ namespace Maha.JsonService
 {
     public class SMD
     {
+        /// <summary>
+        /// 传输方式
+        /// </summary>
         public string transport { get; set; }
+
+        /// <summary>
+        /// 包装协议
+        /// </summary>
         public string envelope { get; set; }
+
+        /// <summary>
+        /// 目标
+        /// </summary>
         public string target { get; set; }
+
+        /// <summary>
+        /// 是否为附加参数
+        /// </summary>
         public bool additonalParameters { get; set; }
+
+        /// <summary>
+        /// 附加参数集
+        /// </summary>
         public SMDAdditionalParameters[] parameters { get; set; }
 
         [JsonIgnore]
         public static List<string> TypeHashes { get; set; }
+
         [JsonProperty("types")]
         public static Dictionary<int, JObject> Types { get; set; }
+
         [JsonProperty("services")]
         public Dictionary<string, SMDService> Services { get; set; }
 
@@ -169,7 +190,6 @@ namespace Maha.JsonService
             {
                 return true;
             }
-
             return false;
         }
     }
