@@ -18,7 +18,7 @@ namespace Maha.Microservices.Host
 
             Maha.JsonClient.JsonRpcRequest.SetGlobalContextHandler((collection) =>
             {
-                var contextDict = JsonRpcDataContext.GetCurrentContextDict();
+                var contextDict = JsonRpcDataContext.GetOrInitCurrentContext();
                 foreach (KeyValuePair<string, object> keyValuePair in contextDict)
                     collection[keyValuePair.Key] = (string)keyValuePair.Value;
             });

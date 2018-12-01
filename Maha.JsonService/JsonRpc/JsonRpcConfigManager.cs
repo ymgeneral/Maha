@@ -10,6 +10,12 @@ namespace Maha.JsonService
     /// <returns></returns>
     public delegate JsonRpcException PreProcessHandler(JsonRpcRequestContext request, object context);
 
+    /// <summary>
+    /// 完成时处理程序
+    /// </summary>
+    /// <param name="request"></param>
+    /// <param name="response"></param>
+    /// <param name="context"></param>
     public delegate void CompletedProcessHandler(JsonRpcRequestContext request, JsonRpcResponseContext response, object context);
 
     /// <summary>
@@ -23,6 +29,7 @@ namespace Maha.JsonService
         /// <param name="handler"></param>
         public static void SetPreProcessHandler(PreProcessHandler handler)
         {
+            Handler.DefaultHandler.SetPreProcessHandler(handler);
         }
 
         /// <summary>
@@ -31,6 +38,7 @@ namespace Maha.JsonService
         /// <param name="handler"></param>
         public static void SetCompletedProcessHandler(CompletedProcessHandler handler)
         {
+            Handler.DefaultHandler.SetCompletedProcessHandler(handler);
         }
 
         /// <summary>
@@ -38,9 +46,9 @@ namespace Maha.JsonService
         /// </summary>
         /// <param name="sessionId"></param>
         /// <param name="handler"></param>
-        public static void SetBeforeProcessHanlder(string sessionId,PreProcessHandler handler)
+        public static void SetBeforeProcessHanlder(string sessionId, PreProcessHandler handler)
         {
-
+            Handler.GetSessionHandler(sessionId).SetPreProcessHandler(handler);
         }
 
         /// <summary>
@@ -48,7 +56,7 @@ namespace Maha.JsonService
         /// </summary>
         public static void SetErrorHandler(Func<JsonRpcRequestContext, JsonRpcException, JsonRpcException> handler)
         {
-
+            Handler.DefaultHandler.SetErrorHandler(handler);
         }
 
         /// <summary>
@@ -58,6 +66,7 @@ namespace Maha.JsonService
         /// <param name="handler"></param>
         public static void SetErrorHandler(string sessionId, Func<JsonRpcRequestContext, JsonRpcException, JsonRpcException> handler)
         {
+            Handler.GetSessionHandler(sessionId).SetErrorHandler(handler);
         }
 
         /// <summary>
@@ -66,6 +75,7 @@ namespace Maha.JsonService
         /// <param name="handler"></param>
         public static void SetParseErrorHandler(Func<string, JsonRpcException, JsonRpcException> handler)
         {
+            Handler.DefaultHandler.SetParseErrorHandler(handler);
         }
 
         /// <summary>
@@ -74,6 +84,7 @@ namespace Maha.JsonService
         /// <param name="handler"></param>
         public static void SetParseErrorHandler(string sessionId, Func<string, JsonRpcException, JsonRpcException> handler)
         {
+            Handler.GetSessionHandler(sessionId).SetParseErrorHandler(handler);
         }
     }
 }

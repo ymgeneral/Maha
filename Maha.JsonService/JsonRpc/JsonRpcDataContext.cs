@@ -17,7 +17,7 @@ namespace Maha.JsonService
         private static object contextLocker = new object();
 
         //TLS中的变量（用于多线程模式下，获取线程本地存储信息）
-        private static ThreadLocal<string> local = new ThreadLocal<string>();
+        private static ThreadLocal<string> local = new ThreadLocal<string>(true);
 
         /// <summary>
         /// 获取或初始化当前上下文(基于当前线程Id)

@@ -151,7 +151,9 @@ namespace Maha.JsonService
                 //判定为属性
                 if (method.Name.StartsWith("get_") || method.Name.StartsWith("set_")) continue;
 
+                //请求服务方法的参数名->类型
                 Dictionary<string, Type> paramsTypes = new Dictionary<string, Type>();
+                //请求服务方法的参数名->可选参数的默认值
                 Dictionary<string, object> paramsDefaultValues = new Dictionary<string, object>();
 
                 var methodParams = method.GetParameters();

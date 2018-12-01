@@ -274,6 +274,7 @@ namespace Maha.JsonService
                 var tokenDict = jObject as IDictionary<string, JToken>;
                 parameters = new object[metaData.parameters.Length];
 
+                //将请求参数与服务定义参数进行比较
                 for (int i = 0; i < metaData.parameters.Length; i++)
                 {
                     if (tokenDict.ContainsKey(metaData.parameters[i].Name) == false)
@@ -285,6 +286,8 @@ namespace Maha.JsonService
                             Id = requestContext.Id
                         };
                     }
+                    //获取请求参数
+                    parameters[i] = ConvetParameter(jObject[metaData.parameters[i].Name], metaData.parameters[i]);
                 }
             }
 
