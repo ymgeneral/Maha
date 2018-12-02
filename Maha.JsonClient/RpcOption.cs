@@ -3,7 +3,7 @@
 namespace Maha.JsonClient
 {
     /// <summary>
-    /// Rpc请求选项设置
+    /// Rpc请求选项
     /// </summary>
     public class RpcOption
     {
