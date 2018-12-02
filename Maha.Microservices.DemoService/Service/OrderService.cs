@@ -1,8 +1,8 @@
-﻿using Maha.Microservices.DemoService.Base;
+﻿using Maha.JsonService.DataAnnotations;
+using Maha.Microservices.DemoService.Base;
 using Maha.Microservices.DemoService.Entity;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
 namespace Maha.Microservices.DemoService
@@ -30,7 +30,7 @@ namespace Maha.Microservices.DemoService
 
         private void CheckInput(Order order)
         {
-            //Validator.ValidateObject(order, new ValidationContext(order, null, null), true);
+            Validator.ValidateObject(order, new ValidationContext(order, null, null), true);
             List<ValidationResult> validationResults = new List<ValidationResult>();
             if (!Validator.TryValidateObject(order, new ValidationContext(order, null, null), validationResults, true))
             {

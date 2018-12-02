@@ -1,6 +1,6 @@
-﻿using System;
+﻿using Maha.JsonService.DataAnnotations;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 
 namespace Maha.Microservices.DemoService.Base
 {
@@ -18,7 +18,7 @@ namespace Maha.Microservices.DemoService.Base
         public static void ValidateObject(object instance)
         {
             List<ValidationResult> validationResults = new List<ValidationResult>();
-            if (!Validator.TryValidateObject(instance, new ValidationContext(instance, null, null), validationResults,true))
+            if (!Validator.TryValidateObject(instance, new ValidationContext(instance, null, null), validationResults, true))
             {
                 throw new RpcException(String.Join(Environment.NewLine, validationResults));
             }

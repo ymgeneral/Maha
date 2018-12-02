@@ -1,7 +1,7 @@
-﻿using System;
+﻿using Maha.JsonService.DataAnnotations;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
 
 namespace Maha.Microservices.DemoService.Entity
 {
@@ -47,7 +47,7 @@ namespace Maha.Microservices.DemoService.Entity
         /// <summary>
         /// 送货地址
         /// </summary>
-        [Required(AllowEmptyStrings = true)]
+        [Required(AllowEmptyStrings = false)]
         public string ShippingAddress { get; set; }
 
         /// <summary>

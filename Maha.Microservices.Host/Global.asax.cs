@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Web.Routing;
-using System.ComponentModel.DataAnnotations;
 using Maha.JsonService;
+using Maha.JsonService.DataAnnotations;
 
 namespace Maha.Microservices.Host
 {

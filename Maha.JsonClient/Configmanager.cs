@@ -26,7 +26,7 @@ namespace Maha.JsonClient
             var domainName = items.Length >= 2 ? "JsonRpcServiceClientId." + items[0] : null;
             if (!string.IsNullOrWhiteSpace(domainName))
             {
-                var clientId = DomainToClientOrUrl[domainName];
+                var clientId = DomainToClientOrUrl.ContainsKey(domainName) ? DomainToClientOrUrl[domainName] : string.Empty;
                 if (!string.IsNullOrWhiteSpace(clientId))
                     return clientId;
             }
@@ -44,7 +44,7 @@ namespace Maha.JsonClient
             var domainName = items.Length >= 2 ? "JsonRpcServiceUrl." + items[0] : null;
             if (!string.IsNullOrWhiteSpace(domainName))
             {
-                var clientId = DomainToClientOrUrl[domainName];
+                var clientId = DomainToClientOrUrl.ContainsKey(domainName) ? DomainToClientOrUrl[domainName] : string.Empty;
                 if (!string.IsNullOrWhiteSpace(clientId))
                     return clientId;
             }

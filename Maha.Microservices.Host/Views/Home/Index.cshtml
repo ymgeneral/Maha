@@ -6,7 +6,7 @@
 }
 <!DOCTYPE html>
 <html>
-@{ 
+@{
     var ips = Dns.GetHostByName(Dns.GetHostName()).AddressList;
     foreach (var ip in ips)
     {
@@ -131,25 +131,26 @@
             </tbody>
         </table>
     </div>
-    <script>$(document).ready(function() {
-        (function($) {
-            $('#filter').keyup(function() {
-                var rex1 = new RegExp($(this).val(), 'i');
-                var rex2 = new RegExp('(' + $(this).val() + ')', 'i');
-                var rex3 = new RegExp('<span class="hl">(.*)</span>', 'i');
-                $('.searchable tr').hide();
-                $('.searchable tr td span').each(function(index, value) {
-                    value.innerHTML = value.innerHTML.replace(rex3, "$1");
-                });
-                $('.searchable tr').filter(function() {
-                    return rex1.test($(this).text());
-                }).show();
-                $('.searchable tr td span').each(function(index, value) {
-                    value.innerHTML = value.innerHTML.replace(rex2, '<span class="hl">$1</span>');
-                });
-            })
-        }(jQuery));
+    <script>
+    $(document).ready(function () {
+            (function ($) {
+                $('#filter').keyup(function () {
+                    var rex1 = new RegExp($(this).val(), 'i');
+                    var rex2 = new RegExp('(' + $(this).val() + ')', 'i');
+                    var rex3 = new RegExp('<span class="hl">(.*)</span>', 'i');
+                    $('.searchable tr').hide();
+                    $('.searchable tr td span').each(function (index, value) {
+                        value.innerHTML = value.innerHTML.replace(rex3, "$1");
+                    });
+                    $('.searchable tr').filter(function () {
+                        return rex1.test($(this).text());
+                    }).show();
+                    $('.searchable tr td span').each(function (index, value) {
+                        value.innerHTML = value.innerHTML.replace(rex2, '<span class="hl">$1</span>');
+                    });
+                })
+            }(jQuery));
 
-    });</script>
+        });</script>
 </body>
 </html>

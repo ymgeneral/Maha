@@ -1,4 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Maha.JsonService.DataAnnotations;
 
 namespace Maha.Microservices.DemoService.Base
 {

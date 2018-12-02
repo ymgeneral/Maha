@@ -9,10 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="System.ComponentModel.Annotations" Version="4.5.0" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Maha.JsonClient\Maha.JsonClient.csproj" />
     <ProjectReference Include="..\Maha.JsonService\Maha.JsonService.csproj" />
   </ItemGroup>

@@ -30,7 +30,7 @@ namespace Maha.Microservices.DemoService
         public Order Method2(string param1)
         {
             // 服务内再调其他服务
-            return JsonRpcRequest.Call<Order>("Demo.Demo1.Method3", new User() {UserName = param1});
+            return JsonRpcRequest.Call<Order>("Demo.Demo1.Method3", new User() { UserName = param1});
             // Do nothing
         }
 

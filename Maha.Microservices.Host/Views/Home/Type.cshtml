@@ -73,13 +73,14 @@
     <script src="~/Scripts/highlight/highlight.pack.js"></script>
     <script src="~/Scripts/scripts.js"></script>
     <script src="~/Scripts/clipboard.min.js"></script>
-    <script type="text/javascript">hljs.initHighlightingOnLoad();
-    $(function () {
-        new Clipboard('.btn');
-        $('#codeTab a').click(function(e) {
-            $(this).tab('show');
-        });
-    });</script>
+    <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+        $(function () {
+            new Clipboard('.btn');
+            $('#codeTab a').click(function (e) {
+                $(this).tab('show');
+            });
+        });</script>
 
 </body>
 </html>
