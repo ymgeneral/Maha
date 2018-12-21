@@ -10,7 +10,7 @@
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>JSON-RPC Help  - @Request.Params["name"]</title>
+    <title>Maha Help  - @Request.Params["name"]</title>
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
     <link href="~/Content/styles.css" rel="stylesheet" />
     <link href="~/Scripts/highlight/styles/atom-one-light.css" rel="stylesheet" />
@@ -23,9 +23,9 @@
 <body>
     <nav class="navbar navbar-default" role="banner">
         <div class="container">
-            <div class="navbar-header" class="text-center">
+            <div class="navbar-header">
                 <h2>
-                    @Html.ActionLink("JSON-RPC Help", "Index")
+                    @Html.ActionLink("Maha Help", "Index")
                 </h2>
             </div>
         </div>
@@ -108,7 +108,8 @@
 
 
                 <h4>Sample:</h4>
-                <h5>Request: <button class="btn btn-primary" id="btnTryIt">Try it</button></h5>
+                <h5>Normal Request: <button class="btn btn-primary" id="btnPost">Post</button>&nbsp;&nbsp;<button class="btn btn-primary" id="btnGet">Get</button></h5>
+                <h5>JsonRpc Request: <button class="btn btn-primary" id="btnRpcPost">Post</button>&nbsp;&nbsp;<button class="btn btn-primary" id="btnRpcGet">Get</button></h5>
                 <pre class="small" style="background-color: #fafafa"><code contenteditable="true" id="txtRequest" spellcheck="false" class="json">{
     "jsonrpc": "2.0",
     "method": "@methodName",
@@ -176,20 +177,22 @@
     <script src="~/Scripts/highlight/highlight.pack.js"></script>
     <script src="~/Scripts/scripts.js"></script>
     <script type="text/javascript">
-    hljs.initHighlightingOnLoad();
+        hljs.initHighlightingOnLoad();
 
         $(function () {
             $('#txtRequest').text(formatJSON($('#txtRequest').text()));
             $('#txtResponse').text(formatJSON($('#txtResponse').text()));
 
-            $('#btnTryIt').click(function () {
+            //Normal Post请求
+            $('#btnPost').click(function () {
                 $('#lbResponseStatus').text('In processing, please wait for a moment...');
                 var startTime = new Date();
                 $.ajax({
                     type: 'POST',
-                    url: 'json.rpc',
+                    url: 'maha',
                     data: $('#txtRequest').text(),
-                    dataType: 'text'
+                    dataType: 'text',
+                    contentType: 'text/xml'
                 }).always(function (data, textStatus, jqXHR) {
                     if (textStatus === "error") {
                         data = "<div style=\"color:red\">" + data.responseText + "</div>";
@@ -204,12 +207,104 @@
                     }
                     $('#lbResponseStatus').text('Has returned the result length: ' + data.length + ' chars, with the time of ' + diffText);
 
-                    if (formatedData.length <= 5000) //JsonRepsone内容太长时，高亮处理容易造成CPU占满卡死浏览器，故超过5000字符就不高亮。
+                    if (formatedData.length <= 5000) //返回内容太长时，高亮处理容易造成CPU占满卡死浏览器，故超过5000字符就不高亮。
                         hljs.highlightBlock($('#txtResponse')[0]);
 
                     scroll(null, document.getElementById('divResponse').offsetTop);
                 });
             });
+            //Normal Get请求
+            $('#btnGet').click(function () {
+                $('#lbResponseStatus').text('In processing, please wait for a moment...');
+                var startTime = new Date();
+                $.ajax({
+                    type: 'GET',
+                    url: 'maha',
+                    data: $('#txtRequest').text(),
+                    dataType: 'text',
+                    contentType: 'text/xml'
+                }).always(function (data, textStatus, jqXHR) {
+                    if (textStatus === "error") {
+                        data = "<div style=\"color:red\">" + data.responseText + "</div>";
+                    }
+                    var endTime = new Date();
+                    var formatedData = textStatus === "success" ? formatJSON(data) : data;
+                    $('#txtResponse').text(formatedData);
+                    var diffms = GetDateDiff(startTime, endTime, 'ms');
+                    var diffText = diffms + ' milliseconds';
+                    if (diffms > 1000) {
+                        diffText = diffms / 1000 + ' seconds';
+                    }
+                    $('#lbResponseStatus').text('Has returned the result length: ' + data.length + ' chars, with the time of ' + diffText);
+
+                    if (formatedData.length <= 5000) //返回内容太长时，高亮处理容易造成CPU占满卡死浏览器，故超过5000字符就不高亮。
+                        hljs.highlightBlock($('#txtResponse')[0]);
+
+                    scroll(null, document.getElementById('divResponse').offsetTop);
+                });
+            });
+
+            //JsonRpc Post请求
+            $('#btnRpcPost').click(function () {
+                $('#lbResponseStatus').text('In processing, please wait for a moment...');
+                var startTime = new Date();
+                $.ajax({
+                    type: 'POST',
+                    url: 'maha',
+                    data: $('#txtRequest').text(),
+                    dataType: 'text',
+                    contentType: 'text/xml'
+                }).always(function (data, textStatus, jqXHR) {
+                    if (textStatus === "error") {
+                        data = "<div style=\"color:red\">" + data.responseText + "</div>";
+                    }
+                    var endTime = new Date();
+                    var formatedData = textStatus === "success" ? formatJSON(data) : data;
+                    $('#txtResponse').text(formatedData);
+                    var diffms = GetDateDiff(startTime, endTime, 'ms');
+                    var diffText = diffms + ' milliseconds';
+                    if (diffms > 1000) {
+                        diffText = diffms / 1000 + ' seconds';
+                    }
+                    $('#lbResponseStatus').text('Has returned the result length: ' + data.length + ' chars, with the time of ' + diffText);
+
+                    if (formatedData.length <= 5000) //返回内容太长时，高亮处理容易造成CPU占满卡死浏览器，故超过5000字符就不高亮。
+                        hljs.highlightBlock($('#txtResponse')[0]);
+
+                    scroll(null, document.getElementById('divResponse').offsetTop);
+                });
+            });
+            //JsonRpc Get请求
+            $('#btnRpcGet').click(function () {
+                $('#lbResponseStatus').text('In processing, please wait for a moment...');
+                var startTime = new Date();
+                $.ajax({
+                    type: 'GET',
+                    url: 'maha',
+                    data: { jsonrpc: $('#txtRequest').text() },
+                    dataType: 'text',
+                    contentType: 'text/xml'
+                }).always(function (data, textStatus, jqXHR) {
+                    if (textStatus === "error") {
+                        data = "<div style=\"color:red\">" + data.responseText + "</div>";
+                    }
+                    var endTime = new Date();
+                    var formatedData = textStatus === "success" ? formatJSON(data) : data;
+                    $('#txtResponse').text(formatedData);
+                    var diffms = GetDateDiff(startTime, endTime, 'ms');
+                    var diffText = diffms + ' milliseconds';
+                    if (diffms > 1000) {
+                        diffText = diffms / 1000 + ' seconds';
+                    }
+                    $('#lbResponseStatus').text('Has returned the result length: ' + data.length + ' chars, with the time of ' + diffText);
+
+                    if (formatedData.length <= 5000) //返回内容太长时，高亮处理容易造成CPU占满卡死浏览器，故超过5000字符就不高亮。
+                        hljs.highlightBlock($('#txtResponse')[0]);
+
+                    scroll(null, document.getElementById('divResponse').offsetTop);
+                });
+            });
+
         });</script>
 </body>
 </html>

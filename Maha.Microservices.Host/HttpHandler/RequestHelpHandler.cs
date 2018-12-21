@@ -11,10 +11,10 @@ using System.Web;
 namespace Maha.Microservices.Host 
 {
     /// <summary>
-    /// JsonRpc帮助 Http管线处理程序
+    /// Http管线处理程序
     /// HttpRequest-->inetinfo.exe-->ASPNET_ISAPI.dll-->ASPNET_WP.exe-->HttpRuntime-->HttpApplication Factory-->HttpApplication-->HttpModule-->HttpHandler Factory-->HttpHandler-->HttpHandler.ProcessRequest()
     /// </summary>
-    public class JsonRpcHelpHandler : IHttpHandler
+    public class JsonHelpHandler : IHttpHandler
     {
         /// <summary>
         /// 使用低位在前的编码方式
@@ -34,7 +34,7 @@ namespace Maha.Microservices.Host
 <html lang=""en"">
   <head>
     <meta http-equiv=""Content-Type"" content=""text/html;charset=utf-8"" >
-    <TITLE>JSON-RPC help</TITLE>
+    <TITLE>Maha help</TITLE>
     <style type=""text/css"">
 article,
 aside,
@@ -453,7 +453,7 @@ pre code {
   </head>
   <body style=""padding:20px"">");
             #endregion
-            context.Response.Write(string.Format("<h3>JSON-RPC Help {0}</h3>", DateTime.Now.ToString("yyyyMMdd")));
+            context.Response.Write(string.Format("<h3>Maha Help {0}</h3>", DateTime.Now.ToString("yyyyMMdd")));
             context.Response.Write("<br/>");
             context.Response.Write(System.Environment.NewLine);
             context.Response.Write(System.Environment.NewLine);

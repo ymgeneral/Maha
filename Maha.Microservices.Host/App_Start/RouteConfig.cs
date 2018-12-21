@@ -8,8 +8,8 @@ namespace Maha.Microservices.Host
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-            routes.IgnoreRoute("json.rpc");
-            routes.IgnoreRoute("json.rpchelp");
+            routes.IgnoreRoute("maha");
+            routes.IgnoreRoute("maha.help");
 
             routes.MapRoute(
                name: "HomeIndex",

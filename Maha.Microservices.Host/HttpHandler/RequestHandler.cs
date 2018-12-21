@@ -5,13 +5,13 @@ using System.IO.Compression;
 using System.Text;
 using System.Web;
 
-namespace Maha.Microservices.Host 
+namespace Maha.Microservices.Host
 {
     /// <summary>
     /// JsonRpc Http管线处理程序
     /// HttpRequest-->inetinfo.exe-->ASPNET_ISAPI.dll-->ASPNET_WP.exe-->HttpRuntime-->HttpApplication Factory-->HttpApplication-->HttpModule-->HttpHandler Factory-->HttpHandler-->HttpHandler.BeginProcessRequest()
     /// </summary>
-    public class JsonRpcHandler : IHttpAsyncHandler
+    public class RequestHandler : IHttpAsyncHandler
     {
         /// <summary>
         /// 使用低位在前的编码方式
@@ -48,29 +48,22 @@ namespace Maha.Microservices.Host
         }
 
         /// <summary>
-        /// 获取请求JsonRpc字符串
+        /// 获取请求字符串
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>
-        private static string GetJsonRpcString(HttpRequest request)
+        private static string GetRequestContext(HttpRequest request)
         {
-            string json = string.Empty;
+            string requestContext = string.Empty;
             if (request.RequestType == "GET")
             {
-                json = request.Params["jsonrpc"] ?? string.Empty;
+                requestContext = request.Params["jsonrpc"] ?? HttpUtility.UrlDecode(request.QueryString.ToString(), utf8Encoding);
             }
             else if (request.RequestType == "POST")
             {
-                if (request.ContentType == "application/x-www-form-urlencoded")
-                {
-                    json = request.Params["jsonrpc"] ?? string.Empty;
-                }
-                else
-                {
-                    json = new StreamReader(request.InputStream).ReadToEnd();
-                }
+                requestContext = request.Params["jsonrpc"] ?? new StreamReader(request.InputStream).ReadToEnd();
             }
-            return json;
+            return requestContext;
         }
 
         /// <summary>
@@ -82,11 +75,19 @@ namespace Maha.Microservices.Host
         /// <returns></returns>
         public IAsyncResult BeginProcessRequest(HttpContext context, AsyncCallback cb, object extraData)
         {
-            context.Response.ContentType = "application/json";
+            if (!string.IsNullOrWhiteSpace(context.Request.ContentType))
+            {
+                context.Response.ContentType = context.Request.ContentType;
+            }
+            else
+            {
+                //默认采用json格式返回
+                context.Response.ContentType = "application/json";
+            }
 
             //此处将HttpContext作为附加数据传入，由End时取出得到Request返回
             var stateAsync = new JsonRpcStateAsync(cb, context);
-            stateAsync.JsonRpc = GetJsonRpcString(context.Request);
+            stateAsync.JsonRpc = GetRequestContext(context.Request);
             JsonRpcProcessor.Process(stateAsync, context);
             return stateAsync;
         }

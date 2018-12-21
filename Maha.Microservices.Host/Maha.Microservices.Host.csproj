@@ -102,11 +102,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <None Include="HttpHandler\AssemlbyCommentReader" />
-    <None Include="HttpHandler\CSharpEntityGenerator" />
-    <Compile Include="HttpHandler\JsonRpcHandler.cs" />
-    <Compile Include="HttpHandler\JsonRpcHelpHandler.cs" />
-    <None Include="HttpHandler\SampleJsonSerializer" />
+    <Compile Include="HttpHandler\RequestHandler.cs" />
+    <Compile Include="HttpHandler\RequestHelpHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
