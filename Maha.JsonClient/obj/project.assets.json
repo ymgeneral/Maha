@@ -52,11 +52,11 @@
       ]
     },
     "NETStandard.Library/2.0.3": {
-      "sha512": "548M6mnBSJWxsIlkQHfbzoYxpiYFXZZSL00p4GHYv8PkiqFBnnT68mW5mGEsA/ch9fDO9GkPgkFQpWiXZN7mAQ==",
+      "sha512": "st47PosZSHrjECdjeIzZQbzivYBJFv6P2nv4cj2ypdI204DO+vZ7l5raGMiX4eXMJ53RfOIg+/s4DHVZ54Nu2A==",
       "type": "package",
       "path": "netstandard.library/2.0.3",
       "files": [
-        ".signature.p7s",
+        ".nupkg.metadata",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "build/netstandard2.0/NETStandard.Library.targets",
@@ -215,23 +215,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Jason\\.nuget\\packages\\": {},
+    "C:\\Users\\Administrator.PC-20160812PERA\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Individual\\Project\\Maha\\Maha.JsonClient\\Maha.JsonClient.csproj",
+      "projectUniqueName": "E:\\SVN集合\\Maha\\Maha.JsonClient\\Maha.JsonClient.csproj",
       "projectName": "Maha.JsonClient",
-      "projectPath": "E:\\Individual\\Project\\Maha\\Maha.JsonClient\\Maha.JsonClient.csproj",
-      "packagesPath": "C:\\Users\\Jason\\.nuget\\packages\\",
-      "outputPath": "E:\\Individual\\Project\\Maha\\Maha.JsonClient\\obj\\",
+      "projectPath": "E:\\SVN集合\\Maha\\Maha.JsonClient\\Maha.JsonClient.csproj",
+      "packagesPath": "C:\\Users\\Administrator.PC-20160812PERA\\.nuget\\packages\\",
+      "outputPath": "E:\\SVN集合\\Maha\\Maha.JsonClient\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Jason\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Administrator.PC-20160812PERA\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -239,6 +239,8 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Users\\Administrator.PC-20160812PERA\\OneDrive\\IOCP\\PopLarCloudStandard\\bin\\Debug": {},
+        "E:\\SVN集合\\MT\\Developer\\组件\\代码\\杨明\\RdpProject\\UtilsGather\\bin\\Release": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

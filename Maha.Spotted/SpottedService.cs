@@ -41,7 +41,7 @@ namespace Maha.Spotted
 		/// </summary>
 		public void Stop()
 		{
-
-		}
+            httpServer.Close();
+        }
 	}
 }
