@@ -11,9 +11,13 @@ namespace Maha.Spotted
         StreamWriter Writer;
         public void Init()
         {
-
-            LogPath = Path.Combine(Path.GetDirectoryName(new Uri(GetType().Assembly.CodeBase).AbsolutePath), "Files");
-            Writer = new StreamWriter(Path.Combine(LogPath, DateTime.Now.ToShortDateString() + ".txt"), true);
+            LogPath = Path.Combine(Path.GetDirectoryName(new Uri(GetType().Assembly.CodeBase).LocalPath), "Files");
+            if(!Directory.Exists(LogPath))
+            {
+                Directory.CreateDirectory(LogPath);
+            }
+            Writer = new StreamWriter(Path.Combine(LogPath, DateTime.Now.ToString("yyyy-MM-dd") + ".txt"), true);
+            
             WriteText("时间    类型     数据", false);
         }
 
@@ -32,11 +36,12 @@ namespace Maha.Spotted
             }
             WriteText($"{DateTime.Now.ToShortTimeString()} Error {obj.ToString()}");
         }
-        private void WriteText(string text, bool isShow = true)
+        private async void  WriteText(string text, bool isShow = true)
         {
             if (isShow)
                 Console.WriteLine(text);
-            Writer.WriteLineAsync(text);
+            await Writer.WriteLineAsync(text);
+            Writer.Flush();
         }
         public void WriteInfo(object obj)
         {
@@ -57,6 +62,12 @@ namespace Maha.Spotted
         public void Dispose()
         {
             WriteText("-------------------------------------------------",false);
+            Writer.Close();
+        }
+
+        public void Close()
+        {
+            Dispose();
         }
     }
 }

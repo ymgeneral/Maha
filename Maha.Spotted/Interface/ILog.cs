@@ -10,5 +10,6 @@ namespace Maha.Spotted
 		void Init();
 		void WriteInfo(object obj);
 		void WriteError(object obj);
+        void Close();
 	}
 }

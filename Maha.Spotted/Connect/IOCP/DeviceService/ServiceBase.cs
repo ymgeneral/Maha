@@ -76,9 +76,9 @@ namespace PoplarCloud
                 OnConnected(client);
             }
         }
-        public bool Start(uint port, uint maxListener)
+        public void Start(uint port, uint maxListener)
         {
-            return transfer.CreateService(port);
+            transfer.CreateService(port);
         }
         public bool Stop()
         {

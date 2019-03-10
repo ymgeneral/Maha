@@ -49,34 +49,21 @@ namespace PoplarCloud
             tcpListener = null;
             return ret;
         }
-        public bool CreateService(uint port,bool isWebService=false)
+        public void CreateService(uint port,bool isWebService=false)
         {
             isWebServer = isWebService;
             if(tcpListener!=null)
             {
-                OnRaiseErrored(new RaiseErrorEvent() {  ErrorMessage ="服务已经开启！" });
-                return false;
+                throw new Exception("服务已经开启!");
             }
             if (port < 1000 || port > 65535)
             {
-                OnRaiseErrored(new RaiseErrorEvent() {  ErrorMessage = "无效的端口,端口请设置在1000-65535之间" });
-                return false;
+                throw new Exception("无效的端口,端口请设置在1000-65535之间");
             }
             tcpListener=new TcpListener((int)port);
             tcpListener.Connected += tcpListener_Connected;
-            try
-            {
-                tcpListener.Init((uint)maxConnect);
-                tcpListener.Start();
-                return true;
-            }
-            catch(Exception ex)
-            {
-                OnRaiseErrored(new RaiseErrorEvent() {  ErrorMessage = ex.Message });
-                tcpListener.Stop();
-                tcpListener = null;
-                return false;
-            }
+            tcpListener.Init((uint)maxConnect);
+            tcpListener.Start();
         }
         public void ConnectParentAsync(string netAddress, uint port,AsyncCallback callBack,object state)
         {

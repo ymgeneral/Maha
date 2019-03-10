@@ -11,6 +11,7 @@ namespace Maha.Spotted.Connect
 
         public override void AbsInit()
         {
+
         }
 
         public override void AbsUnInit()
@@ -20,6 +21,7 @@ namespace Maha.Spotted.Connect
 
         public override void DeviceDataPacketReceived(YChannel sender, IPacket pack)
         {
+
         }
 
         public override void ServiceDataPacketReceived(YChannel sender, IPacket pack)

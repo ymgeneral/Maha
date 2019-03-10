@@ -19,7 +19,7 @@ namespace Maha.Spotted.HTTP
 		{
 			foreach (string s in prefixes)
 			{
-				if (!s.EndsWith("/"))
+                if (!s.EndsWith("/"))
 				{
 					listener.Prefixes.Add(s + "/");
 				}
